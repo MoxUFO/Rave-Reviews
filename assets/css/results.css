@@ -1,6 +1,11 @@
 #BG-img{
     background-image: url(https://media.giphy.com/media/kegHnC7EtTjZhHF0q6/giphy.gif);
     background-size: cover;
+    height: 200vh;
+}
+h3{
+    color:white;
+    padding-bottom: 10px;
 }
 
 main {
@@ -9,7 +14,7 @@ main {
     height: 105vh;
   
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
     grid-template-areas: 
     ". . a a a a a a a a . ."
     ". . . . . . . . . . . ."
@@ -18,16 +23,29 @@ main {
     ". b b b b b b b b b b ."
     ". b b b b b b b b b b ."
     ". . . . . . . . . . . ."
+    ". c c c c c c c c c c ."
+    ". . . . . . . . . . . ."
+    ". d d d d d d d d d d ."
+    ". . . . . . . . . . . ."
+    ". e e e e e e e e e e ."
     ". . . . . . . . . . . ."
     ". . . . . . . . . . . ."
+    ". . . . . . . . . . . ."
+   
     
 
 
   }
+  p{
+    color: white;
+    font-size: large;
+  }
   
+
   
   #one {
-    background-color: white;
+    background-color: black;
+    color: white;
     text-align: center;
     grid-area: a;
   } 
@@ -36,3 +54,30 @@ main {
     background-color: black;
     grid-area: b;
   }
+
+  .hotel-div{
+    background-color: black;
+    grid-area: c;
+  }
+
+  .food-div{
+    background-color: black;
+    grid-area: d;
+  }
+
+  .bars-div{
+    background-color: black;
+    grid-area: e;
+  }
+
+ .flex-container{
+    display: flex;
+ }
+  .card-div{
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+ .price-div{
+    margin-left: 20px;
+    margin-top: 10px;
+ }
