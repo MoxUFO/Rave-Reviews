@@ -53,5 +53,16 @@ main {
     background-color: black;
     grid-area: b;
   }
+  /* #three{
+    background-color: black;
+    color: white;
+    grid-area: c;
+  } */
+
+  p{
+    color: white;
+    text-align: center;
+    font-size: large;
+  }
   
   
