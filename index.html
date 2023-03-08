@@ -5,15 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Document</title>
   </head>
@@ -28,9 +23,11 @@
                 <label >Search Location</label>
                 <input  id="location-input" placeholder="Location!" type="text">
               </div>
-              <div class="field">
-                <label>Date</label>
-                <input id="date-input" placeholder="Date" type="text">
+              <div class="ui calendar" id="standard_calendar">
+                <div class="ui fluid input left icon">
+                  <i class="calendar icon"></i>
+                  <input type="text" placeholder="Date/Time">
+                </div>
               </div>
             </div>
             <div class="two fields">
@@ -66,6 +63,6 @@
       </section>
     </main>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/datepicker.js"></script>
+  
   </body>
 </html>

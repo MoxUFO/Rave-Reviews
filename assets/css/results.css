@@ -14,7 +14,7 @@ main {
     height: 105vh;
   
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    grid-template-rows: repeat(10, );
     grid-template-areas: 
     ". . a a a a a a a a . ."
     ". . . . . . . . . . . ."
@@ -58,6 +58,7 @@ main {
   .hotel-div{
     background-color: black;
     grid-area: c;
+    margin-top: 20px;
   }
 
   .food-div{
