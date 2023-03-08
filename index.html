@@ -9,6 +9,9 @@
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
@@ -30,7 +33,13 @@
               </div>
               <div class="field">
                 <label>Date</label>
-                <input id="date-input" placeholder="Select a date" type="text">
+
+                <div class="ui inverted calendar" id="inverted_calendar">
+                  <div class="ui fluid input left icon">
+                    <i class="calendar icon"></i>
+                    <input type="text" placeholder="Select a date">
+                  </div>
+                </div>
               </div>
            
             
@@ -57,7 +66,7 @@
       </section>
       <section id="content">
         <h1>Going Somewhere?</h1>
-        <p>We believe finding an event and checking out the reviews should go together like peas in a pod, so we made this website to make things easier for you. Welcome to Rave Reviews! <br></br>Know where you're going? Type in the city name under 'search location,' select a date, an event type, and an event genre, and we'll do the rest for you! Once you see an event you like, just click on it and we'll send you to a new screen with all the need-to-know information, including reviews!
+        <p>We believe finding an event and checking out the reviews should go together like peas in a pod, so we made this website to make things easier for you. Welcome to Rave Reviews! <br></br>Know where you're going? Type in the city name under 'search location,' select a date, an event type, and an event genre, and we'll do the rest for you. Once you see an event you like, just click on it and we'll send you to a new screen with all the need-to-know information like nearby hotels and restaurants, as well as venue reviews!
         </p>
       </section>
       <section id="three">
