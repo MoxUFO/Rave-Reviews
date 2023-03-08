@@ -5,7 +5,8 @@
 
 h1{
     color: aliceblue;
-    text-align: center;
+    text-align:right;
+    padding-right:5px;
 }
 
 /* #side-bar{
@@ -43,16 +44,27 @@ main {
 
   }
   
+  .segment {
+    flex-direction:column;
+  }
   
-  #one {
+  #sideBar {
     background-color: black;
+    opacity:70%;
     grid-area: a;
   } 
 
-  #two {
+  #content {
     background-color: black;
     grid-area: b;
+    opacity:70%;
   }
+  
+  #content h1 {
+    text-align:center;
+  }
+
+
   /* #three{
     background-color: black;
     color: white;
