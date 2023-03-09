@@ -1,4 +1,14 @@
+
+
+
+$('#inverted_calendar')
+  .calendar({
+    type: 'date'
+  })
+;
+
 let searchBtn = document.getElementById("search-events");
+
 
 function handleEventQuery() {
   let eventLocation = document.getElementById("location-input").value;
