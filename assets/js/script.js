@@ -1,3 +1,9 @@
+$('#inverted_calendar')
+  .calendar({
+    type: 'date'
+  })
+;
+
 console.log(document.getElementById("BG-img"))
 let url = 'https://app.ticketmaster.com/discovery/v2/events.json?city=&segmentName=music&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA'
 fetch(url)
