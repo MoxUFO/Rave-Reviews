@@ -1,3 +1,5 @@
+
+
 $('#inverted_calendar')
   .calendar({
     type: 'date'
