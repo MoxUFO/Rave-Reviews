@@ -49,6 +49,8 @@ let eventInfo = {}
 let tempInfo = {}
 let step = 0
 yelpAPIreturn = {}
+let segmentName = ""
+let genreId = ""
 
 TicketMasterAPIcall()
 
@@ -56,13 +58,13 @@ TicketMasterAPIcall()
 // initial Ticketmaster API call
 function TicketMasterAPIcall () {
   cityName = prompt("Please enter a city")
-  fetch(`https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=${key}&city=${cityName}`)
+  fetch(`https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=${key}&city=${cityName}&segmentName=${segmentName}`)
       .then(function(data) {
           return(data.json())        
       })
       .then(function(data) {
           ticketMasterReturn = data
-          // console.log(data)
+          console.log(data)
           for (i = 0; i < 10; i++) {
               tempInfo = {}
               // finds the event name
@@ -88,11 +90,36 @@ function TicketMasterAPIcall () {
               // Ticket status
               tempInfo['EventStatus'] = data._embedded.events[i].dates.status.code
 
-              // Genre
+              // Genre Name
               tempInfo['EventGenre'] = data._embedded.events[i].classifications[0].genre.name
-              
+
+              // Segment Name
+              tempInfo['SegmentName'] = data._embedded.events[i].classifications[0].segment.name
+
+              // seatmap URL
+              tempInfo['seatmapURL'] = data._embedded.events[i].seatmap.staticUrl
+
+              // ticketmaster URL
+              tempInfo['ticketmasterURL'] = data._embedded.events[i].url
+
+              // finds largest img with 16_9 ratio
+              let biggestImg = {}
+              biggestImg['height'] = 0
+              biggestImg['Url'] = ""
+              for (j = 0 ; j < data._embedded.events[i].images.length; j++) {                
+                if (data._embedded.events[i].images[j].ratio === "16_9"){
+                  if (data._embedded.events[i].images[j].height > biggestImg['height']) {
+                    biggestImg['height'] = data._embedded.events[i].images[j].height
+                    biggestImg['Url'] = data._embedded.events[i].images[j].url
+                  }
+                }
+              }
+              tempInfo['imageUrl'] = biggestImg['Url']
+
+
               eventInfo[i] = tempInfo            
           }
+          console.log(data)
           encodeVariables()   
       })
 }      
