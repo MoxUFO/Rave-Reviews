@@ -49,8 +49,12 @@ let eventInfo = {}
 let tempInfo = {}
 let step = 0
 yelpAPIreturn = {}
-let segmentName = ""
+let segmentName = "music"
 let genreId = ""
+let userdate = "2023-04-20"
+let eventStartDate = userdate + "T00:00:00Z"
+
+
 
 TicketMasterAPIcall()
 
@@ -58,7 +62,7 @@ TicketMasterAPIcall()
 // initial Ticketmaster API call
 function TicketMasterAPIcall () {
   cityName = prompt("Please enter a city")
-  fetch(`https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=${key}&city=${cityName}&segmentName=${segmentName}`)
+  fetch(`https://app.ticketmaster.com/discovery/v2/events.json?size=10&apikey=${key}&city=${cityName}&segmentName=${segmentName}&startDateTime=${eventStartDate}`)
       .then(function(data) {
           return(data.json())        
       })
@@ -85,7 +89,11 @@ function TicketMasterAPIcall () {
               tempInfo['EventDate'] = data._embedded.events[i].dates.start.localDate
 
               // Ticket price range
-              tempInfo['EventPrices'] = [data._embedded.events[i].priceRanges[0].min, data._embedded.events[i].priceRanges[0].max]
+              if (data._embedded.events[i].hasOwnProperty("priceRanges")){
+                tempInfo['EventPrices'] = [data._embedded.events[i].priceRanges[0].min, data._embedded.events[i].priceRanges[0].max]
+              } else {
+                console.log("event " + i + " does not have a price range")
+              }
 
               // Ticket status
               tempInfo['EventStatus'] = data._embedded.events[i].dates.status.code
@@ -97,7 +105,11 @@ function TicketMasterAPIcall () {
               tempInfo['SegmentName'] = data._embedded.events[i].classifications[0].segment.name
 
               // seatmap URL
+              if (data._embedded.events[i].hasOwnProperty("seatmap")) {
               tempInfo['seatmapURL'] = data._embedded.events[i].seatmap.staticUrl
+              } else {
+                console.log("event " + i + " does not have a seatmap")
+              }
 
               // ticketmaster URL
               tempInfo['ticketmasterURL'] = data._embedded.events[i].url
