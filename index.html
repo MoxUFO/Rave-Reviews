@@ -21,19 +21,17 @@
     <title>Document</title>
   </head>
   <body id="BG-img">
-    <main>
+      <div class="content-flex">
       <section id="sideBar">
         <h1 id="siteTitle">Rave Reviews</h1>
         <div class="ui inverted segment">
           <div class="ui inverted form">
-            
               <div class="field">
                 <label >Search Location</label>
                 <input  id="location-input" placeholder="City name" type="text">
               </div>
               <div class="field">
                 <label>Date</label>
-
                 <div class="ui inverted calendar" id="inverted_calendar">
                   <div class="ui fluid input left icon">
                     <i class="calendar icon"></i>
@@ -41,8 +39,6 @@
                   </div>
                 </div>
               </div>
-           
-            
               <div class="field">
                 <label>Event Type</label>
                 <select id="event-type" class="ui search dropdown">
@@ -54,25 +50,27 @@
                 <label>Event Genre</label>
                 <select id="genre-list" class="ui search dropdown">
                   <option value="">Event Genre</option>
-                  <option value="AL">Alabama</option>
+                  <option value="Alabama">Alabama</option>
+                  <option value="sports">sport</option>
                 </select>
               
-            </div>
+              </div>
             <div class="inline field">
             </div>
             <button class="ui submit button" id="search-events" >Let's Go!</button>
           </div>
         </div>
       </section>
-      <section id="content">
-        <h1>Going Somewhere?</h1>
-        <p>We believe finding an event and checking out the reviews should go together like peas in a pod, so we made this website to make things easier for you. Welcome to Rave Reviews! <br></br>Know where you're going? Type in the city name under 'search location,' select a date, an event type, and an event genre, and we'll do the rest for you. Once you see an event you like, just click on it and we'll send you to a new screen with all the need-to-know information like nearby hotels and restaurants, as well as venue reviews!
-        </p>
-      </section>
-      <section id="three">
       
-      </section>
-    </main>
+      <div class="intro-flex">
+        <div id="content">
+          <h1>Going Somewhere?</h1>
+          <p>We believe finding an event and checking out the reviews should go together like peas in a pod, so we made this website to make things easier for you. Welcome to Rave Reviews! <br></br>Let us know where you're going, select a date, an event type and we'll do the rest for you. Once you select an event you like, we'll provide you all some extra information like nearby hotels and restaurants!
+          </p>
+        </div>
+        </div>
+      </div>
+    
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

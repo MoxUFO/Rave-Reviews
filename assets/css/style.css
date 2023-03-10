@@ -1,6 +1,7 @@
 #BG-img{
     background-image: url(https://media.giphy.com/media/kegHnC7EtTjZhHF0q6/giphy.gif);
     background-size: cover;
+    
 }
 
 h1{
@@ -8,6 +9,7 @@ h1{
     text-align:right;
     padding-right:5px;
 }
+
 
 /* #side-bar{
     width: 30%;
@@ -22,7 +24,7 @@ h1{
     align-items: center;
 } */
 
-main {
+/* main {
     display: grid;
 
     height: 105vh;
@@ -31,10 +33,10 @@ main {
     grid-template-rows: repeat(10, 1fr);
     grid-template-areas: 
     "a a a . . . . . . . . ."
-    "a a a . . b b b b b . ."
-    "a a a . . b b b b b . ."
-    "a a a . . b b b b b . ." 
-    "a a a . . b b b b b . ."
+    "a a a . . . . . . . . ."
+    "a a a . . . . . . . . ."
+    "a a a . . . . . . . . ." 
+    "a a a . . . . . . . . ."
     "a a a . . . . . . . . ."
     "a a a . . . . . . . . ."
     "a a a . . . . . . . . ."
@@ -42,7 +44,7 @@ main {
     "a a a . . . . . . . . ."
 
 
-  }
+  } */
   
   .segment {
     flex-direction:column;
@@ -52,12 +54,34 @@ main {
     background-color: black;
     opacity:70%;
     grid-area: a;
+    height: 100vh;
+    width: 35%;
+    flex-shrink: 0;
+   
   } 
 
   #content {
     background-color: black;
     grid-area: b;
     opacity:70%;
+    width: 60%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    padding-left: 7px;
+    padding-right: 7px;
+    
+    
+  }
+  .content-flex{
+    display: flex;
+    
+  
+  }
+  
+  .intro-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   #content h1 {
@@ -77,4 +101,16 @@ main {
     font-size: large;
   }
   
+  .hide-me{
+    display: none;
+  }
+
+  @media screen and (max-width: 480px) {
+
+    #sideBar {
+      width: 37%;
+      
+     
+    } 
+  }
   
