@@ -160,7 +160,9 @@ function yelpAPIfilter() {
   }
   // increases step count by 1
   step = step + 1
+  if (step === 10) {
   console.log(eventInfo)
+  }
 }
 
 // calls yelp api using encoded venue name
