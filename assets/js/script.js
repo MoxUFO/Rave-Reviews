@@ -3,7 +3,10 @@
 
 $('#inverted_calendar')
   .calendar({
-    type: 'date'
+    type: 'date',
+    formatter: {
+      date: 'YYYY-MM-DD'
+    }
   })
 ;
 
@@ -32,9 +35,7 @@ fetch(url)
     console.log(data);
   });
 
-$("#inverted_calendar").calendar({
-  type: "date",
-});
+
 
 searchBtn.addEventListener("click", handleEventQuery);
 
