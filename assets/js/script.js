@@ -1,5 +1,9 @@
 let eventParent = document.getElementById('event-list-parent')
 let introDiv = document.getElementById('intro-div')
+let eventLocation = document.getElementById("location-input")
+let dateInput = document.getElementById("date-input")
+let eventType = document.getElementById("event-type")
+let genreList = document.getElementById("genre-list")
 
 $('#inverted_calendar')
   .calendar({
@@ -21,6 +25,26 @@ function handleEventQuery() {
   TicketMasterAPIcall(eventLocation,dateInput, eventType, genreList)
 }
 
+function eventDetails(event){
+  console.log(event.target.children[4].innerHTML)
+  if (event.target.children[4].innerHTML == undefined){
+
+  } else{
+    queryString = './results.html?id=' + event.target.children[4].innerHTML
+    location.assign(queryString);
+    console.log(queryString)
+  }
+  // queryString = './results.html?city=' + eventLocation + '&event=' + eventType
+  // location.assign(queryString);
+  // console.log(queryString)
+  // let eventLocation = document.getElementById("location-input").value;
+  // let dateInput = document.getElementById("date-input").value;
+  // let eventType = document.getElementById("event-type").value;
+  // let genreList = document.getElementById("genre-list").value; 
+  // console.log(eventLocation , dateInput , eventType ,genreList)
+
+}
+
 function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
   let url =
     "https://app.ticketmaster.com/discovery/v2/events.json?city=" + eventLocation + "&segmentName=" + eventType + "&startDateTime" + dateInput + "&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA";
@@ -30,11 +54,11 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
     })
     .then(function (data) {
      for (let i = 0; i < 15; i++) {
-      console.log(data._embedded.events[i].dates.start)
-      console.log('hi')
+      // console.log(data._embedded.events[i].id)
+      // console.log('hi')
       let eventDiv =document.createElement('div')
       eventDiv.classList.add('content')
-      let eventCard =document.createElement('div')
+      let eventCard =document.createElement('button')
       eventCard.classList.add('event-list-card')
       let eventHeader = document.createElement('h3')
       eventHeader.textContent = data._embedded.events[i].name
@@ -44,12 +68,18 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       venueDiv.textContent = data._embedded.events[i]._embedded.venues[0].name
       let dateDiv = document.createElement('div')
       dateDiv.textContent = data._embedded.events[i].dates.start.localDate + ' ' + data._embedded.events[i].dates.start.localTime
+      let eventId = document.createElement('div')
+      eventId.textContent = data._embedded.events[i].id
+      eventId.classList.add('hide-me')
       eventCard.append(eventHeader)
       eventCard.append(genreDiv)
       eventCard.append(venueDiv)
       eventCard.append(dateDiv)
+      eventCard.append(eventId)
       eventDiv.append(eventCard)
+      
       eventParent.append(eventDiv)
+      eventCard.addEventListener('click', eventDetails)
      }
     });
    }

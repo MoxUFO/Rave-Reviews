@@ -106,6 +106,8 @@ h1{
   }
   .event-list-card{
     padding-bottom: 10px;
+    background-color: black;
+    width: 100%;
     
   }
   #event-list-parent{
