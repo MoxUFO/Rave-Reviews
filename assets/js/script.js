@@ -18,6 +18,7 @@ let searchBtn = document.getElementById("search-events");
 function handleEventQuery() {
   let eventLocation = document.getElementById("location-input").value;
   let dateInput = document.getElementById("date-input").value;
+   dateInput = dateInput + "T00:00:00Z"
   let eventType = document.getElementById("event-type").value;
   let genreList = document.getElementById("genre-list").value;
   introDiv.classList.add('hide-me')
@@ -28,31 +29,22 @@ function handleEventQuery() {
 function eventDetails(event){
   console.log(event.target.children[4].innerHTML)
   if (event.target.children[4].innerHTML == undefined){
-
   } else{
     queryString = './results.html?id=' + event.target.children[4].innerHTML
     location.assign(queryString);
     console.log(queryString)
   }
-  // queryString = './results.html?city=' + eventLocation + '&event=' + eventType
-  // location.assign(queryString);
-  // console.log(queryString)
-  // let eventLocation = document.getElementById("location-input").value;
-  // let dateInput = document.getElementById("date-input").value;
-  // let eventType = document.getElementById("event-type").value;
-  // let genreList = document.getElementById("genre-list").value; 
-  // console.log(eventLocation , dateInput , eventType ,genreList)
-
 }
 
 function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
   let url =
-    "https://app.ticketmaster.com/discovery/v2/events.json?city=" + eventLocation + "&segmentName=" + eventType + "&startDateTime" + dateInput + "&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA";
+    "https://app.ticketmaster.com/discovery/v2/events.json?city=" + eventLocation + "&segmentName=" + eventType + "&startDateTime=" + dateInput + "&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA";
   fetch(url)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      console.log(url)
      for (let i = 0; i < 15; i++) {
       // console.log(data._embedded.events[i].id)
       // console.log('hi')
@@ -77,14 +69,15 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       eventCard.append(dateDiv)
       eventCard.append(eventId)
       eventDiv.append(eventCard)
-      
       eventParent.append(eventDiv)
       eventCard.addEventListener('click', eventDetails)
      }
     });
    }
 searchBtn.addEventListener("click", handleEventQuery);
-
+// zgEmnQtADI7tPFs1XGAEQUwY7o3h06UpHtrPNfD9exKX43XIaEFxBlyp7vziw7hYbFh7iEgPrCMTZ9i8MmlBGJLpMbU6q8JzSRP6FnF8Exu7hP6krLa1oGU6tyANZHYx
+// zgEmnQtADI7tPFs1XGAEQUwY7o3h06UpHtrPNfD9exKX43XIaEFxBlyp7vziw7hYbFh7iEgPrCMTZ9i8MmlBGJLpMbU6q8JzSRP6FnF8Exu7hP6krLa1oGU6tyANZHYx
+// zgEmnQtADI7tPFs1XGAEQUwY7o3h06UpHtrPNfD9exKX43XIaEFxBlyp7vziw7hYbFh7iEgPrCMTZ9i8MmlBGJLpMbU6q8JzSRP6FnF8Exu7hP6krLa1oGU6tyANZHYx
 // // variables
 // var key = "wAUd3TteUrno75GAGlIlbBXcvGgQurTA"
 // let cityName = ""
