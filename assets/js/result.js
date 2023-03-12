@@ -1,5 +1,3 @@
-
-
 function getParams(){
     let searchParamsArr = document.location.search.split('=')[1]
     console.log(searchParamsArr)
@@ -27,9 +25,6 @@ function TicketMasterAPIcall(searchParamsArr){
         seatMap.setAttribute('href', seatMapUrl);
         let priceRange = document.getElementById('price-range')
         priceRange.textContent = 'Price Range: ' + '$' + data._embedded.events[0].priceRanges[0].min + '-' + '$' + data._embedded.events[0].priceRanges[0].max
-
-
       });
      }
-     
 getParams()
