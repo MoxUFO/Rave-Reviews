@@ -58,6 +58,7 @@ main {
     background-color: black;
     grid-area: b;
     opacity:70%;
+    /* overflow:scroll; */
   }
   
   #content h1 {
