@@ -20,7 +20,7 @@ function TicketMasterAPIcall(searchParamsArr){
         return response.json();
       })
       .then(function (data) {
-       console.log(data._embedded.events[0])
+       console.log(data._embedded.events)
 
         let eventName =document.getElementById('event-name')
         eventName.textContent = data._embedded.events[0].name
