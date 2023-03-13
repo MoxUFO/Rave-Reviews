@@ -19,10 +19,9 @@ No installation required
 On the left side of your screen enter the name of the city into the search tab, select a date, the event type and genre, then hit the Let's go! button.
 
 You will now be presented with a list of events from the city entered in the search tab.
-Select an event of your choice and this will take you to the SeatMap Live Site to select and purchase your tickets. Below the event window, you will see a list of the top-rated hotels, restaurants and bars including the address and contact number. 
+Select your event and you will be taken to a page with more event details such as price and a link to the seat map to select and purchase your tickets. Below the event window, you will see a list of the top-rated hotels, restaurants and bars including the address and contact number.
 
 Quick, Simple and Easy!
-
 
 ## Credits
 
@@ -38,11 +37,9 @@ https://github.com/GEOAI9
 
 https://github.com/oreynosa12
 
-
 https://www.ticketmaster.com/
 
 https://www.yelp.com/
-
 
 ## License
 
