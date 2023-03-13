@@ -1,8 +1,16 @@
+let returnHome = document.getElementById('reset-app')
+
 function getParams(){
     let searchParamsArr = document.location.search.split('=')[1]
     console.log(searchParamsArr)
     TicketMasterAPIcall(searchParamsArr)
   }
+
+function ReturnToHome(){
+    home = './index.html?'
+      location.assign(home);
+}
+
 
 function TicketMasterAPIcall(searchParamsArr){
     let url =
@@ -12,7 +20,7 @@ function TicketMasterAPIcall(searchParamsArr){
         return response.json();
       })
       .then(function (data) {
-    //    console.log(data._embedded.events[0].url)
+       console.log(data._embedded.events[0])
 
         let eventName =document.getElementById('event-name')
         eventName.textContent = data._embedded.events[0].name
@@ -125,7 +133,6 @@ function TicketMasterAPIcall(searchParamsArr){
             })
      }
 
-
      function yelpBars(city){
         yelpURL = `https://yelp-backend.netlify.app/.netlify/functions/search?term=bars&location=${city}`
         fetch(yelpURL, {})
@@ -171,9 +178,5 @@ function TicketMasterAPIcall(searchParamsArr){
             barFourPhone.textContent ="Phone number: " +  data.businesses[3].phone
             })
      }
-
-    
-
-
-
+returnHome.addEventListener('click',ReturnToHome)
 getParams()
