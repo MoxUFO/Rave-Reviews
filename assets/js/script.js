@@ -44,9 +44,9 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       return response.json();
     })
     .then(function (data) {
-      console.log(url)
+      // console.log(url)
      for (let i = 0; i < 15; i++) {
-      // console.log(data._embedded.events[i].id)
+      // console.log(data._embedded.events)
       // console.log('hi')
       let eventDiv =document.createElement('div')
       eventDiv.classList.add('content')
@@ -71,6 +71,12 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       eventDiv.append(eventCard)
       eventParent.append(eventDiv)
       eventCard.addEventListener('click', eventDetails)
+      
+   
+       eventLocation = document.getElementById("location-input").value = ""
+       dateInput = document.getElementById("date-input").value = ""
+       eventType = document.getElementById("event-type").value = ""
+       genreList = document.getElementById("genre-list").value = ""
      }
     });
    }
