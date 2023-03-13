@@ -16,6 +16,7 @@ $('#inverted_calendar')
 let searchBtn = document.getElementById("search-events");
 
 function handleEventQuery() {
+  eventParent.innerHTML = " "
   let eventLocation = document.getElementById("location-input").value;
   let dateInput = document.getElementById("date-input").value;
    dateInput = dateInput + "T00:00:00Z"
