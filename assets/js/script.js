@@ -1,3 +1,6 @@
+$("document").ready(function(){
+
+
 $('#inverted_calendar')
   .calendar({
     type: 'date'
@@ -15,10 +18,12 @@ fetch(url)
     console.log(data)
   })
 
-createGenres();
-function createGenres() {
-  let genreType = $('#event-type')
-  if (genreType.val = "sports") {
+
+function createGenres(ev) {//ev is input event
+  let select = ev.target;
+  console.log(select.value);
+  let genreType = $('option').val;
+  if (this.genreType = 'sports') {
     let baseball = document.createElement('option');
     let basketball = document.createElement('option');
     let boxing = document.createElement('option');
@@ -149,3 +154,6 @@ if (genreType.val = "Special Interest/Hobby") {//yes this is right.
 
 }
 }
+
+$("option").on('input',createGenres)
+});
