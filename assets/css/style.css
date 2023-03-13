@@ -68,6 +68,9 @@ h1{
     background-color: black;
     grid-area: b;
     opacity:70%;
+
+    /* overflow:scroll; */
+
     width: 80%;
     border-radius: 7px;
     margin-top: 15px;
@@ -80,6 +83,7 @@ h1{
     display: flex;
     
   
+
   }
   
   .intro-flex{

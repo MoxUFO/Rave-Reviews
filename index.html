@@ -1,5 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Document</title>
+</head>
+
+<body id="BG-img">
+  <main>
+    <section id="sideBar">
+      <h1 id="siteTitle">Rave Reviews</h1>
+      <div class="ui inverted segment">
+        <div class="ui inverted form">
+
+          <div class="field">
+            <label>Search Location</label>
+            <input id="location-input" placeholder="City name" type="text">
+          </div>
+          <div class="field">
+            <label>Date</label>
+
+            <div class="ui inverted calendar" id="inverted_calendar">
+              <div class="ui fluid input left icon">
+                <i class="calendar icon"></i>
+                <input type="text" placeholder="Select a date">
+              </div>
+            </div>
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -57,8 +95,64 @@
             <div class="inline field">
             </div>
             <button class="ui submit button" id="search-events" >Let's Go!</button>
+
           </div>
+
+
+          <div class="field">
+            <label>Event Type</label>
+            <select id="event-type" class="ui search dropdown" name="eventOptions">
+              <option value="">Event Type</option>
+              <option value="sports">Sports</option>
+              <option value="music">Music</option>
+              <option value="Casino/Gaming">Casino/Gaming</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Fairs & Festivals">Fairs and Festivals</option>
+              <option value="Community/Cultural">Community/Cultural</option>
+              <option value="family">Family</option>
+              <option value="Health/Wellness">Health/Wellness</option>
+              <option value="Lecture/Seminar">Lecture/Seminar</option>
+              <option value="Special Interest/Hobby">Special Interest/Hobby</option>
+
+            </select>
+          </div>
+          <div class="field">
+            <label>Event Genre</label>
+            <select id="genre-list" class="ui search dropdown">
+              <option value="">Event Genre</option>
+            </select>
+          </div>
+          <div class="inline field">
+          </div>
+          <div class="ui submit button" id="search-events">Let's Go!</div>
+          <h3>Know where you're going?</h3>
+          <p>
+            Type in the city name under 'search location,' select a date, an event type, and
+            an event genre, and we'll do the rest for you. Once you see an event you like, just click on it and we'll
+            send you to a new screen with all the need-to-know information like nearby hotels and restaurants, as well
+            as venue reviews!
+
+          </p>
         </div>
+
+      </div>
+
+    </section>
+    <section id="content">
+      <h1>Going Somewhere?</h1>
+      <p>We believe finding an event and checking out the reviews should go together like peas in a pod, so we made this
+        website to make things easier for you. Welcome to Rave Reviews!
+      </p>
+    </section>
+    <section id="three">
+
+    </section>
+  </main>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
+
       </section>
       
       <div class="intro-flex ">
@@ -77,3 +171,4 @@
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
+
