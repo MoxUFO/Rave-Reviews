@@ -1,6 +1,4 @@
-*{
-  color: white;
-}
+
 
 #BG-img{
     background-image: url(https://media.giphy.com/media/kegHnC7EtTjZhHF0q6/giphy.gif);
@@ -8,9 +6,14 @@
     
 }
 
-h1{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
     color: aliceblue;
-    text-align:right;
     padding-right:5px;
 }
 
@@ -68,9 +71,6 @@ h1{
     background-color: black;
     grid-area: b;
     opacity:70%;
-
-    /* overflow:scroll; */
-
     width: 80%;
     border-radius: 7px;
     margin-top: 15px;
@@ -83,7 +83,6 @@ h1{
     display: flex;
     
   
-
   }
   
   .intro-flex{
@@ -104,7 +103,7 @@ h1{
     grid-area: c;
   } */
 
-  p{
+  p, div{
     color: white;
     font-size: large;
   }
