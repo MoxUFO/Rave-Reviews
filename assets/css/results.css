@@ -9,6 +9,8 @@ h3{
   
 }
 
+
+
 /* main {
   display: grid;
 
@@ -148,4 +150,9 @@ width: 50%;
   margin-top: 15px;
   opacity:70%;
   grid-area: f;
+}
+
+#image {
+  height: 200px;
+  width: auto;
 }

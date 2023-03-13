@@ -34,6 +34,19 @@ function TicketMasterAPIcall(searchParamsArr){
         let priceRange = document.getElementById('price-range')
         priceRange.textContent = 'Price Range: ' + '$' + data._embedded.events[0].priceRanges[0].min + '-' + '$' + data._embedded.events[0].priceRanges[0].max
         city = data._embedded.events[0]._embedded.venues[0].city.name
+        let image = document.getElementById('image')
+        let biggestImg = {}
+        biggestImg['height'] = 0
+        biggestImg['Url'] = ""
+        for (j = 0 ; j < data._embedded.events[0].images.length; j++) {                
+          if (data._embedded.events[0].images[j].ratio === "16_9"){
+            if (data._embedded.events[0].images[j].height > biggestImg['height']) {
+              biggestImg['height'] = data._embedded.events[0].images[j].height
+              biggestImg['Url'] = data._embedded.events[0].images[j].url
+            }
+          }
+        }        
+        image.src = biggestImg['Url']
         console.log(city)
         yelpHotels(city)
         yelpFood(city)
