@@ -19,7 +19,11 @@ function handleEventQuery() {
   eventParent.innerHTML = " "
   let eventLocation = document.getElementById("location-input").value;
   let dateInput = document.getElementById("date-input").value;
-   dateInput = dateInput + "T00:00:00Z"
+  if (!dateInput) {
+    dateInput = dateInput
+  } else{
+  dateInput = dateInput + "T00:00:00Z"
+  }
   let eventType = document.getElementById("event-type").value;
   let genreList = document.getElementById("genre-list").value;
   introDiv.classList.add('hide-me')
@@ -45,6 +49,7 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       return response.json();
     })
     .then(function (data) {
+
       // console.log(url)
      for (let i = 0; i < 15; i++) {
       // console.log(data._embedded.events)
