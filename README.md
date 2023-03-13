@@ -16,10 +16,12 @@ No installation required
 
 ## Usage
 
-On the left side of your screen enter the name of the city, select a date, the event type and genre and hit Let's go! button.
+On the left side of your screen enter the name of the city into the search tab, select a date, the event type and genre, then hit the Let's go! button.
 
-You should now have all the event information and a list of the top-rated hotels,
-restaurants and local attractions.
+You will now be presented with a list of events from the city entered in the search tab.
+Select your event and you will be taken to a page with more event details such as price and a link to the seat map to select and purchase your tickets. Below the event window, you will see a list of the top-rated hotels, restaurants and bars including the address and contact number.
+
+Quick, Simple and Easy!
 
 ## Credits
 
@@ -35,11 +37,9 @@ https://github.com/GEOAI9
 
 https://github.com/oreynosa12
 
-
 https://www.ticketmaster.com/
 
 https://www.yelp.com/
-
 
 ## License
 
