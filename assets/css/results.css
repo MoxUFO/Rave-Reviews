@@ -1,38 +1,151 @@
 #BG-img{
-    background-image: url(https://media.giphy.com/media/kegHnC7EtTjZhHF0q6/giphy.gif);
-    background-size: cover;
+  background-image: url(https://media.giphy.com/media/kegHnC7EtTjZhHF0q6/giphy.gif);
+  background-size: cover;
+  height: 125vh;
+}
+h3{
+  color:white;
+  padding-bottom: 10px;
+  
 }
 
-main {
-    display: grid;
+/* main {
+  display: grid;
 
-    height: 105vh;
+  height: 105vh;
+
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, );
+  grid-template-areas: 
+  ". . a a a a a a a a . ."
+  ". . . . . . . . . . . ."
+  ". b b b b b b b b b b ."
+  ". b b b b b b b b b b ." 
+  ". b b b b b b b b b b ."
+  ". b b b b b b b b b b ."
+  ". . . . . . . . . . . ."
+ 
+ 
   
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    grid-template-areas: 
-    ". . a a a a a a a a . ."
-    ". . . . . . . . . . . ."
-    ". b b b b b b b b b b ."
-    ". b b b b b b b b b b ." 
-    ". b b b b b b b b b b ."
-    ". b b b b b b b b b b ."
-    ". . . . . . . . . . . ."
-    ". . . . . . . . . . . ."
-    ". . . . . . . . . . . ."
-    
 
 
-  }
-  
-  
-  #one {
-    background-color: white;
-    text-align: center;
-    grid-area: a;
-  } 
+} */
+p{
+  color: white;
+  font-size: large;
+}
+.event-card{
+  display: flex;
+  justify-content: center;
+}
+.card-body{
+  display: flex;
+}
 
-  #two {
-    background-color: black;
-    grid-area: b;
-  }
+
+
+#one {
+  background-color: black;
+  color: white;
+  text-align: center;
+  grid-area: a;
+  opacity:65%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  display: flex;
+  justify-content: space-around;
+} 
+
+#two {
+  width: 83%;
+  background-color: black;
+  grid-area: c;
+  margin-top: 28px;
+  padding-top: 10px;
+  padding-left: 15px;
+  border-radius: 6px;
+  opacity:80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.yelp-api{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hotel-div{
+  width: 83%;
+  background-color: black;
+  grid-area: c;
+  margin-top: 28px;
+  padding-top: 10px;
+  padding-left: 15px;
+  border-radius: 6px;
+  opacity:80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotels{
+width: 50%;
+
+}
+
+.food-div{
+  width: 83%;
+  background-color: black;
+  grid-area: d;
+  margin-top: 28px;
+  padding-top: 10px;
+  padding-left: 15px;
+  border-radius: 6px;
+  opacity:80%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotels{ margin-top: 5px;}
+
+.bars-div{
+  width: 83%;
+  background-color: black;
+  grid-area: e;
+  margin-top: 28px;
+  padding-top: 10px;
+  padding-left: 15px;
+  border-radius: 6px;
+  opacity:80%;
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-bottom: 10px; */
+}
+
+.flex-container{
+  display: flex;
+}
+.card-div{
+  margin-left: 15px;
+  margin-top: 10px;
+}
+.img-div{
+  margin-left: 10px;
+}
+.price-div{
+  margin-left: 10px;
+  margin-top: 10px;
+} 
+
+.yelp-content{
+  width: 50%;
+}
+
+#footer{
+  background-color: black;
+  text-align: center;
+  color: white;
+  margin-top: 15px;
+  opacity:70%;
+  grid-area: f;
+}

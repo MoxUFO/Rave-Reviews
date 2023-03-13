@@ -18,20 +18,128 @@
     <title>Document</title>
   </head>
   <body id="BG-img">
-    <main>
+    <main >
         <section id="one">
           <h1>Rave Review</h1>
+          <button id="reset-app" class="ui submit button" >Find New Event</button>
         </section>
+        <div class="event-card" >
         <section id="two">
-          <h1>Hello</h1>
-          <p>I'm a paragtraph</p>
-        </section>
+            <div class="img-div">
+                <img src="./assets/images/venue.jpg">
+                <h3 id="event-name">event name(example: artist tour, sports team vs):</h3>
+                <h3 id="event-venue">venue location/name</h3>
+            </div>
+            <div class="price-div">
+                <h3 id="event-date">Date:</h3>
+                <h3><a id="seat-map" >SeatMap Live Site</a></h3>
+                <h3 id="price-range">Price:</h3>
+            </div>    
+    </section>
+    </div>
       </main>
-      <div id="yelp-hotel-parent"></div>
-      <div id="yelp-food-parent" ></div>
-      <div id="yelp-bars-parent"></div>
+      <div class="yelp-api">
+        <div class="hotel-div" id="yelp-hotel-parent">
+          <div id="hotels">
+            <h3 class="yelp-content" id="hotel-1"></h3>
+            <p class="yelp-content" id="hotel-1-rating"></p>
+            <p class="yelp-content" id="hotel-1-address"></p>
+            <p class="yelp-content" id="hotel-1-phone"></p>
+            <hr>
+          </div>
+          
+          <div id="hotels">
+            <h3 class="yelp-content" id="hotel-2"></h3>
+            <p class="yelp-content" id="hotel-2-rating"></p>
+            <p class="yelp-content" id="hotel-2-address"></p>
+            <p class="yelp-content" id="hotel-2-phone"></p>
+            <hr>
+          </div>
+          <div id="hotels">
+            <h3 class="yelp-content" id="hotel-3"></h3>
+            <p class="yelp-content" id="hotel-3-rating"></p>
+            <p class="yelp-content" id="hotel-3-address"></p>
+            <p class="yelp-content" id="hotel-3-phone"></p>
+            <hr>
+          </div>
+          <div id="hotels">
+            <h3 class="yelp-content" id="hotel-4"></h3>
+            <p class="yelp-content" id="hotel-4-rating"></p>
+            <p class="yelp-content" id="hotel-4-address"></p>
+            <p  class="yelp-content" id="hotel-4-phone"></p>
+            <hr>
+          </div>
+        </div>
+        <div class="food-div" id="yelp-food-parent" >
+          <div class="hotels">
+            <h3 class="yelp-content" id="food-1"></h3>
+            <p class="yelp-content" id="food-1-rating"></p>
+            <p class="yelp-content" id="food-1-address"></p>
+            <p class="yelp-content" id="food-1-phone"></p>
+            <hr>
+          </div>
+          
+          <div id="hotels">
+            <h3 class="yelp-content" id="food-2"></h3>
+            <p class="yelp-content" id="food-2-rating"></p>
+            <p class="yelp-content" id="food-2-address"></p>
+            <p class="yelp-content" id="food-2-phone"></p>
+            <hr>
+          </div>
+          <div id="hotels">
+            <h3 class="yelp-content" id="food-3"></h3>
+            <p class="yelp-content" id="food-3-rating"></p>
+            <p class="yelp-content" id="food-3-address"></p>
+            <p class="yelp-content" id="food-3-phone"></p>
+            <hr>
+          </div>
+          <div id="hotels">
+            <h3 class="yelp-content" id="food-4"></h3>
+            <p class="yelp-content" id="food-4-rating"></p>
+            <p class="yelp-content" id="food-4-address"></p>
+            <p class="yelp-content" id="food-4-phone"></p>
+            <hr>
+          </div>
+        </div>
+        <div class="bars-div" id="yelp-bars-parent">
+          <div class="hotels">
+            <h3 class="yelp-content" id="bar-1"></h3>
+            <p class="yelp-content" id="bar-1-rating"></p>
+            <p class="yelp-content" id="bar-1-address"></p>
+            <p class="yelp-content" id="bar-1-phone"></p>
+            <hr>
+          </div>
+          
+          <div id="hotels">
+            <h3 class="yelp-content" id="bar-2"></h3>
+            <p class="yelp-content" id="bar-2-rating"></p>
+            <p class="yelp-content" id="bar-2-address"></p>
+            <p class="yelp-content" id="bar-2-phone"></p>
+            <hr>
+          </div>
+          <div id="hotels">
+            <h3 class="yelp-content" id="bar-3"></h3>
+            <p class="yelp-content" id="bar-3-rating"></p>
+            <p class="yelp-content" id="bar-3-address"></p>
+            <p class="yelp-content" id="bar-3-phone"></p>
+            <hr>
+          </div>
+          <div id="hotels">
+            <h3 class="yelp-content" id="bar-4"></h3>
+            <p class="yelp-content" id="bar-4-rating"></p>
+            <p class="yelp-content" id="bar-4-address"></p>
+            <p class="yelp-content" id="bar-4-phone"></p>
+            <hr>
+          </div>
+        </div>
+      </div>
+    <section id="footer">
+      <h5>mit license</h5>
+      </section>
       
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/datepicker.js"></script>
+     
+      
+    <script src="./assets/js/result.js"></script>
+
   </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,6 +37,65 @@
                 <input type="text" placeholder="Select a date">
               </div>
             </div>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Document</title>
+  </head>
+  <body id="BG-img">
+      <div class="content-flex">
+      <section id="sideBar">
+        <h1 id="siteTitle">Rave Reviews</h1>
+        <div class="ui inverted segment">
+          <div class="ui inverted form">
+              <div class="field">
+                <label >Search Location</label>
+                <input  id="location-input" placeholder="City name" type="text">
+              </div>
+              <div class="field">
+                <label>Date</label>
+                <div class="ui inverted calendar" id="inverted_calendar">
+                  <div class="ui fluid input left icon">
+                    <i class="calendar icon"></i>
+                    <input id="date-input" type="text" placeholder="Select a date">
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Event Type</label>
+                <select id="event-type" class="ui search dropdown">
+                  <option value="">Event Type</option>
+                  <option value="music">Music</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Event Genre</label>
+                <select id="genre-list" class="ui search dropdown">
+                  <option value="">Event Genre</option>
+                  <option value="Rock">Rock</option>
+                </select>
+              
+              </div>
+            <div class="inline field">
+            </div>
+            <button class="ui submit button" id="search-events" >Let's Go!</button>
+
           </div>
 
 
@@ -74,6 +134,7 @@
 
           </p>
         </div>
+
       </div>
 
     </section>
@@ -91,3 +152,23 @@
 </body>
 
 </html>
+
+      </section>
+      
+      <div class="intro-flex ">
+        <div id="intro-div" class="content">
+          <h1>Going Somewhere?</h1>
+          <p>We believe finding an event and checking out the reviews should go together like peas in a pod, so we made this website to make things easier for you. Welcome to Rave Reviews! <br></br>Let us know where you're going, select a date, an event type and we'll do the rest for you. Once you select an event you like, we'll provide you all some extra information like nearby hotels and restaurants!
+          </p>
+        </div>
+        <div class="hide-me"  id="event-list-parent" >
+       
+      </div>
+        </div>
+      </div>
+      
+    
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
+
