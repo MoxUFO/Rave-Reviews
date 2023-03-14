@@ -17,6 +17,8 @@ $('#inverted_calendar')
     }
   });
 
+
+
   function genreChange(event) {
     genreList.innerHTML = listStart
     let eventType = document.getElementById("event-type").value;
@@ -167,7 +169,7 @@ function handleEventQuery() {
   eventParent.innerHTML = " "
   let eventLocation = document.getElementById("location-input").value;
   if (eventLocation == "") {
-    
+
     return
   }
   let dateInput = document.getElementById("date-input").value;
@@ -208,13 +210,13 @@ function saveEvent(){//this functions saved searched loction in the local storag
 
 function suggestEvent(){
   let storedLocation = JSON.parse(localStorage.getItem("event-location"));
-console.log(storedLocation)
+// console.log(storedLocation)
   if(!storedLocation){    
     return
   }
     var suggestionsIndex = Math.floor(Math.random() * storedLocation.length)
     var suggestion = storedLocation[suggestionsIndex];
-    console.log(suggestion);
+    // console.log(suggestion);
    
     let url =
     "https://app.ticketmaster.com/discovery/v2/events.json?city=" + suggestion +"&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA ";
@@ -224,10 +226,10 @@ console.log(storedLocation)
     })
     .then(function (data) {
       let eventsArray = data._embedded.events
-      console.log(eventsArray);
+      // console.log(eventsArray);
       var arrayIndex = Math.floor(Math.random() * eventsArray.length)
       let randonEventObj = eventsArray[arrayIndex]
-      console.log(randonEventObj);
+      // console.log(randonEventObj);
 
       let eventDiv =document.createElement('div')
       eventDiv.classList.add('content')
@@ -303,7 +305,14 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       return response.json();
     })
     .then(function (data) {
-
+      // console.log(data._embedded.events);
+      if (data._embedded == undefined) {
+        console.log('no');
+        $('.ui.basic.modal')
+        .modal('show')
+      ;
+      introDiv.classList.remove('hide-me')
+      }
       // console.log(url)
      for (let i = 0; i < 15; i++) {
       // console.log(data._embedded)
