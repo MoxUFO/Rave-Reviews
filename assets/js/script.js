@@ -5,6 +5,7 @@ let dateInput = document.getElementById("date-input")
 let eventType = document.getElementById("event-type")
 let genreList = document.getElementById("genre-list")
 let searchBtn = document.getElementById("search-events");
+let listStart = document.getElementById('list-start')
 
 $('#inverted_calendar')
   .calendar({
@@ -15,9 +16,10 @@ $('#inverted_calendar')
   });
 
   function genreChange(event) {
-    
+    genreList.innerHTML = listStart
     let eventType = document.getElementById("event-type").value;
-    if (eventType == 'music') {
+    if (eventType == 'KZFzniwnSyZfZ7v7nJ') {
+    let option1 = listStart
     let alternative = document.createElement('option');
     let childrens = document.createElement('option');
     let classical = document.createElement('option');
@@ -43,7 +45,21 @@ $('#inverted_calendar')
     rnb.text = "R&B";
     religious.text = "religious";
     rock.text = "rock";
+    
+    alternative.value = "KnvZfZ7vAvv";
+    childrens.value = "KnvZfZ7vAvk";
+    classical.value = "KnvZfZ7vAeJ";
+    country.value = "KnvZfZ7vAv6";
+    dance.value = "KnvZfZ7vAvF";
+    rap.value = "KnvZfZ7vAv1";
+    latin.value = "KnvZfZ7vAJ6";
+    metal.value = "KnvZfZ7vAvt";
+    pop.value = "KnvZfZ7vAev";
+    rnb.value = "KnvZfZ7vAee";
+    religious.value = "KnvZfZ7vAe7";
+    rock.value = "KnvZfZ7vAeA";
   
+    document.getElementById('genre-list').append(option1);
     document.getElementById('genre-list').append(alternative);
     document.getElementById('genre-list').append(childrens);
     document.getElementById('genre-list').append(classical);
@@ -55,7 +71,92 @@ $('#inverted_calendar')
     document.getElementById('genre-list').append(rnb);
     document.getElementById('genre-list').append(religious);
     document.getElementById('genre-list').append(rock);
-    document.getElementById('genre-list').append(world);
+    } else if ( eventType == 'KZFzniwnSyZfZ7v7nE'){
+    option1 = listStart
+    let baseball = document.createElement('option');
+    let basketball = document.createElement('option');
+    let boxing = document.createElement('option');
+    let football = document.createElement('option');
+    let hockey = document.createElement('option');
+    let motorsports = document.createElement('option');
+    let soccer = document.createElement('option');
+    let wrestling = document.createElement('option');
+    let martialArts = document.createElement('option');
+    baseball.text ='Baseball'
+    basketball.text = 'Basketball'
+    boxing.text = 'Boxing'
+    football.text = 'Football'
+    hockey.text = 'Hockey'
+    motorsports.text = 'Motor Sport and Racing'
+    soccer.text = 'Soccer'
+    wrestling.text ='Wrestling'
+    martialArts.text = 'Martial Arts'
+    baseball.value ='KnvZfZ7vAdv'
+    basketball.value = 'KnvZfZ7vAde'
+    boxing.value = 'KnvZfZ7vAdA'
+    football.value = 'KnvZfZ7vAdE'
+    hockey.value = 'KnvZfZ7vAdI'
+    motorsports.value = 'KnvZfZ7vA7k'
+    soccer.value = 'KnvZfZ7vA7E'
+    wrestling.value ='KnvZfZ7vAAk'
+    martialArts.value = 'KnvZfZ7vA7d'
+  // {id: 'KnvZfZ7vAdv', name: 'Baseball'
+  // {id: 'KnvZfZ7vAde', name: 'Basketball'
+  // {id: 'KnvZfZ7vAdA', name: 'Boxing'
+  // {id: 'KnvZfZ7vAdE', name: 'Football'
+  // {id: 'KnvZfZ7vAdI', name: 'Hockey'
+  // {id: 'KnvZfZ7vA7k', name: 'Motorsports/Racing'
+  // {id: 'KnvZfZ7vA7E', name: 'Soccer'
+  // {id: 'KnvZfZ7vAAk', name: 'Wrestling'
+  // {id: 'KnvZfZ7vA7d', name: 'Martial Arts'
+    document.getElementById('genre-list').append(option1);
+    document.getElementById('genre-list').append(baseball);
+    document.getElementById('genre-list').append(basketball);
+    document.getElementById('genre-list').append(boxing);
+    document.getElementById('genre-list').append(football);
+    document.getElementById('genre-list').append(hockey);
+    document.getElementById('genre-list').append(martialArts);
+    document.getElementById('genre-list').append(motorsports);
+    document.getElementById('genre-list').append(soccer);
+    document.getElementById('genre-list').append(wrestling);
+    } else if ( eventType == 'KZFzniwnSyZfZ7v7na'){
+      let option1 = listStart
+      let childTheatre = document.createElement('option');
+      let CircusActs = document.createElement('option');
+      let classic = document.createElement('option');
+      let comedy = document.createElement('option');
+      let cultural = document.createElement('option');
+      let danceArt = document.createElement('option');
+      let magic = document.createElement('option');
+      let opera = document.createElement('option');
+      let pupetry = document.createElement('option');
+      childTheatre.text = "Children's theatre";
+      CircusActs.text = "Circus & Special Acts";
+      classic.text = "Classical";
+      comedy.text = "Comedy";
+      cultural.text = "Cultural";
+      danceArt.text = "Dance";
+      magic.text = "Magic & Illusion";
+      opera.text = "opera";
+      pupetry.text = "Pupetry";
+      childTheatre.value = "KnvZfZ7v7na";
+      CircusActs.value = "KnvZfZ7v7n1";
+      classic.value = "KnvZfZ7v7nJ";
+      comedy.value = "KnvZfZ7vAe1";
+      cultural.value = "KnvZfZ7v7nE";
+      danceArt.value = "KnvZfZ7v7nI";
+      magic.value = "KnvZfZ7v7lv";
+      opera.value = "KnvZfZ7v7lk";
+      pupetry.value = "KnvZfZ7v7lF";
+      document.getElementById('genre-list').append(option1);
+      document.getElementById('genre-list').append(childTheatre);
+      document.getElementById('genre-list').append(CircusActs);
+      document.getElementById('genre-list').append(classic);
+      document.getElementById('genre-list').append(comedy);
+      document.getElementById('genre-list').append(danceArt);
+      document.getElementById('genre-list').append(magic);
+      document.getElementById('genre-list').append(opera);
+      document.getElementById('genre-list').append(pupetry);
     }
   }
 
@@ -75,6 +176,7 @@ function handleEventQuery() {
   let genreList = document.getElementById("genre-list").value;
   introDiv.classList.add('hide-me')
   eventParent.classList.remove('hide-me')
+  console.log(genreList)
   TicketMasterAPIcall(eventLocation,dateInput, eventType, genreList)
 }
 
@@ -91,20 +193,20 @@ function eventDetails(event){
 
 function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
   let url =
-    "https://app.ticketmaster.com/discovery/v2/events.json?city=" + eventLocation + "&segmentName=" + eventType + "&startDateTime=" + dateInput + "&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA";
+    "https://app.ticketmaster.com/discovery/v2/events.json?city=" + eventLocation + "&genreId=" + genreList + "&segmentId=" + eventType + "&startDateTime=" + dateInput + "&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA";
   fetch(url)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
 
-      // console.log(url)
+      console.log(url)
      for (let i = 0; i < 15; i++) {
-      // console.log(data._embedded.events)
+      console.log(data._embedded)
       // console.log('hi')
       let eventDiv =document.createElement('div')
       eventDiv.classList.add('content')
-      let eventCard =document.createElement('button')
+      let eventCard =document.createElement('div')
       eventCard.id = "eventCard"
       let imageDiv = document.createElement('div') 
       imageDiv.id = "imageDiv"     
@@ -127,7 +229,7 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       dateDiv.textContent = data._embedded.events[i].dates.start.localDate + ' ' + data._embedded.events[i].dates.start.localTime
       contentDiv.dataset.eventId = data._embedded.events[i].id
       imageDiv.dataset.eventId = data._embedded.events[i].id
-      console.log(eventCard.dataset.eventId)
+      // console.log(eventCard.dataset.eventId)
       let thumbnail = document.createElement('img')
       let biggestImg = {}
       biggestImg['height'] = 0

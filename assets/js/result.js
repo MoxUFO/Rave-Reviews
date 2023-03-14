@@ -1,5 +1,6 @@
 let returnHome = document.getElementById('reset-app')
 
+
 function getParams(){
     let searchParamsArr = document.location.search.split('=')[1]
     console.log(searchParamsArr)

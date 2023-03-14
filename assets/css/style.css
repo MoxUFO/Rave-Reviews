@@ -100,6 +100,7 @@ h6
   p, div{
     color: white;
     font-size: large;
+    padding-top: 7px;
   }
 
   .event-list-card{
@@ -107,6 +108,7 @@ h6
     background-color: black;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;    
   }
 
