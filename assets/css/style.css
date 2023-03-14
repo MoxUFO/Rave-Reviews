@@ -81,6 +81,7 @@ h6
   
   .intro-flex{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
@@ -100,6 +101,7 @@ h6
   p, div{
     color: white;
     font-size: large;
+    padding-top: 7px;
   }
 
   .event-list-card{
@@ -107,6 +109,7 @@ h6
     background-color: black;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;    
   }
 
