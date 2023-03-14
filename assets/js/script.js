@@ -6,6 +6,8 @@ let eventType = document.getElementById("event-type")
 let genreList = document.getElementById("genre-list")
 let searchBtn = document.getElementById("search-events");
 let listStart = document.getElementById('list-start')
+let suggestionParent = document.getElementById('suggestion-parent')
+let suggestionHeader = document.getElementById('suggestion-header')
 
 $('#inverted_calendar')
   .calendar({
@@ -129,7 +131,7 @@ $('#inverted_calendar')
       let danceArt = document.createElement('option');
       let magic = document.createElement('option');
       let opera = document.createElement('option');
-      let pupetry = document.createElement('option');
+      
       childTheatre.text = "Children's theatre";
       CircusActs.text = "Circus & Special Acts";
       classic.text = "Classical";
@@ -138,7 +140,7 @@ $('#inverted_calendar')
       danceArt.text = "Dance";
       magic.text = "Magic & Illusion";
       opera.text = "opera";
-      pupetry.text = "Pupetry";
+     
       childTheatre.value = "KnvZfZ7v7na";
       CircusActs.value = "KnvZfZ7v7n1";
       classic.value = "KnvZfZ7v7nJ";
@@ -147,7 +149,7 @@ $('#inverted_calendar')
       danceArt.value = "KnvZfZ7v7nI";
       magic.value = "KnvZfZ7v7lv";
       opera.value = "KnvZfZ7v7lk";
-      pupetry.value = "KnvZfZ7v7lF";
+      
       document.getElementById('genre-list').append(option1);
       document.getElementById('genre-list').append(childTheatre);
       document.getElementById('genre-list').append(CircusActs);
@@ -156,7 +158,6 @@ $('#inverted_calendar')
       document.getElementById('genre-list').append(danceArt);
       document.getElementById('genre-list').append(magic);
       document.getElementById('genre-list').append(opera);
-      document.getElementById('genre-list').append(pupetry);
     }
   }
 
@@ -165,6 +166,10 @@ $('#inverted_calendar')
 function handleEventQuery() {
   eventParent.innerHTML = " "
   let eventLocation = document.getElementById("location-input").value;
+  if (eventLocation == "") {
+    
+    return
+  }
   let dateInput = document.getElementById("date-input").value;
   if (!dateInput) {
     dateInput = dateInput
@@ -172,22 +177,121 @@ function handleEventQuery() {
   dateInput = dateInput + "T00:00:00Z"
   }
   let eventType = document.getElementById("event-type").value;
-
+  // if (!eventType) {
+  //   alert('please choose event')
+  //   return
+  // }
   let genreList = document.getElementById("genre-list").value;
   introDiv.classList.add('hide-me')
+  suggestionHeader.classList.add('hide-me')
+  suggestionParent.classList.add('hide-me')
   eventParent.classList.remove('hide-me')
-  console.log(genreList)
+  
+  saveEvent()
   TicketMasterAPIcall(eventLocation,dateInput, eventType, genreList)
 }
 
+function saveEvent(){//this functions saved searched loction in the local storage with a valid inpit checker starting on line 34
+  let eventType = document.getElementById("location-input").value
+  let storedLocation = JSON.parse(localStorage.getItem("event-location"));
+  
+  if (!storedLocation) {
+    storedLocation = [];
+  }
+  if (storedLocation.includes(eventType)){
+    return
+  }
+        storedLocation.push(eventType);
+        localStorage.setItem("event-location", JSON.stringify(storedLocation));
+ 
+}
+
+function suggestEvent(){
+  let storedLocation = JSON.parse(localStorage.getItem("event-location"));
+console.log(storedLocation)
+  if(!storedLocation){    
+    return
+  }
+    var suggestionsIndex = Math.floor(Math.random() * storedLocation.length)
+    var suggestion = storedLocation[suggestionsIndex];
+    console.log(suggestion);
+   
+    let url =
+    "https://app.ticketmaster.com/discovery/v2/events.json?city=" + suggestion +"&apikey=wAUd3TteUrno75GAGlIlbBXcvGgQurTA ";
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      let eventsArray = data._embedded.events
+      console.log(eventsArray);
+      var arrayIndex = Math.floor(Math.random() * eventsArray.length)
+      let randonEventObj = eventsArray[arrayIndex]
+      console.log(randonEventObj);
+
+      let eventDiv =document.createElement('div')
+      eventDiv.classList.add('content')
+      let eventCard =document.createElement('div')
+      eventCard.id = "eventCard"
+      let imageDiv = document.createElement('div') 
+      imageDiv.id = "imageDiv"     
+      let contentDiv = document.createElement('div')
+      contentDiv.id = "contentDiv"
+      eventCard.append(imageDiv)     
+      eventCard.append(contentDiv)      
+      eventCard.classList.add('event-list-card')
+      let eventHeader = document.createElement('h3')
+      eventHeader.textContent = randonEventObj.name
+      let genreDiv = document.createElement('div')
+      if (!randonEventObj.classifications[0].genre) {
+        genreDiv.textContent = 'undefined'
+      } else{
+        genreDiv.textContent = randonEventObj.classifications[0].genre.name
+      }
+      let venueDiv = document.createElement('div')
+      venueDiv.textContent = randonEventObj._embedded.venues[0].name
+      let dateDiv = document.createElement('div')
+      dateDiv.textContent = randonEventObj.dates.start.localDate + ' ' + randonEventObj.dates.start.localTime
+      contentDiv.dataset.eventId = randonEventObj.id
+      imageDiv.dataset.eventId = randonEventObj.id
+      // console.log(eventCard.dataset.eventId)
+      let thumbnail = document.createElement('img')
+      let biggestImg = {}
+      biggestImg['height'] = 0
+      biggestImg['Url'] = ""
+      for (j = 0 ; j < randonEventObj.images.length; j++) {                
+        if (randonEventObj.images[j].ratio === "16_9"){
+          if (randonEventObj.images[j].height > biggestImg['height']) {
+            biggestImg['height'] = randonEventObj.images[j].height
+            biggestImg['Url'] = randonEventObj.images[j].url
+          }
+        }
+      }        
+      thumbnail.src = biggestImg['Url']
+      thumbnail.id = "thumbnail"
+      // console.log(eventCard)
+      // eventId.textContent = data._embedded.events[i].id
+      // eventId.classList.add('hide-me')
+      contentDiv.appendChild(eventHeader)
+      contentDiv.appendChild(genreDiv)
+      contentDiv.appendChild(venueDiv)
+      contentDiv.appendChild(dateDiv)
+      // contentDiv.appendChild(eventId)
+      eventDiv.appendChild(eventCard)
+      imageDiv.appendChild(thumbnail)
+      suggestionParent.appendChild(eventDiv)
+    });
+  
+}
+
 function eventDetails(event){
-  console.log(event.target)
+  // console.log(event.target)
   // if (event.target.children[4].innerHTML == undefined){
   // } else{
     console.log(event.target.parentElement)
     queryString = './results.html?id=' + event.target.parentElement.dataset.eventId
     location.assign(queryString);
-    console.log(queryString)
+    // console.log(queryString)
   // }
 }
 
@@ -200,9 +304,9 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
     })
     .then(function (data) {
 
-      console.log(url)
+      // console.log(url)
      for (let i = 0; i < 15; i++) {
-      console.log(data._embedded)
+      // console.log(data._embedded)
       // console.log('hi')
       let eventDiv =document.createElement('div')
       eventDiv.classList.add('content')
@@ -274,5 +378,6 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
      }
     });
    }
+   suggestEvent()
    eventType.addEventListener('change',genreChange)
 searchBtn.addEventListener("click", handleEventQuery);
