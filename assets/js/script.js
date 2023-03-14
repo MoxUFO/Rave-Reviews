@@ -57,6 +57,13 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       let eventDiv =document.createElement('div')
       eventDiv.classList.add('content')
       let eventCard =document.createElement('button')
+      eventCard.id = "eventCard"
+      let imageDiv = document.createElement('div') 
+      imageDiv.id = "imageDiv"     
+      let contentDiv = document.createElement('div')
+      contentDiv.id = "contentDiv"
+      eventCard.append(imageDiv)     
+      eventCard.append(contentDiv)      
       eventCard.classList.add('event-list-card')
       let eventHeader = document.createElement('h3')
       eventHeader.textContent = data._embedded.events[i].name
@@ -67,14 +74,39 @@ function TicketMasterAPIcall(eventLocation, dateInput, eventType,genreList){
       let dateDiv = document.createElement('div')
       dateDiv.textContent = data._embedded.events[i].dates.start.localDate + ' ' + data._embedded.events[i].dates.start.localTime
       let eventId = document.createElement('div')
+      let thumbnail = document.createElement('img')
+      let biggestImg = {}
+      biggestImg['height'] = 0
+      biggestImg['Url'] = ""
+      for (j = 0 ; j < data._embedded.events[i].images.length; j++) {                
+        if (data._embedded.events[i].images[j].ratio === "16_9"){
+          if (data._embedded.events[i].images[j].height > biggestImg['height']) {
+            biggestImg['height'] = data._embedded.events[i].images[j].height
+            biggestImg['Url'] = data._embedded.events[i].images[j].url
+          }
+        }
+      }        
+      thumbnail.src = biggestImg['Url']
+      thumbnail.id = "thumbnail"
+      console.log(data)
+      
       eventId.textContent = data._embedded.events[i].id
       eventId.classList.add('hide-me')
-      eventCard.append(eventHeader)
-      eventCard.append(genreDiv)
-      eventCard.append(venueDiv)
-      eventCard.append(dateDiv)
-      eventCard.append(eventId)
+
+      contentDiv.append(eventHeader)
+      contentDiv.append(genreDiv)
+      contentDiv.append(venueDiv)
+      contentDiv.append(dateDiv)
+      contentDiv.append(eventId)
+      
+     
+
       eventDiv.append(eventCard)
+
+
+      imageDiv.append(thumbnail)
+
+
       eventParent.append(eventDiv)
       eventCard.addEventListener('click', eventDetails)
       
