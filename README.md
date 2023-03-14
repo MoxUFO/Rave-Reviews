@@ -10,6 +10,8 @@ Rave Review was motivated with our users in mind. We believe planning a vacation
 
 https://moxufo.github.io/Rave-Reviews/
 
+![image](https://user-images.githubusercontent.com/121472588/225166677-80eb6db0-823a-4842-a4c3-ba298176a008.png)
+
 ## Installation
 
 No installation required
